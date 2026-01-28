@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BigLabs Landing Page
+
+A modern, responsive landing page built with Next.js 16 and React 19, featuring smooth animations and interactive components.
+
+## Tech Stack
+
+- **Framework:** Next.js 16.1.5 (App Router)
+- **UI Library:** React 19.2.3
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **Form Management:** React Hook Form + Zod validation
+- **UI Components:** Radix UI
+- **Icons:** Lucide React
+- **TypeScript:** Full type safety
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page will auto-reload when you make changes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+### Production
+
+Start the production server:
+
+```bash
+npm start
+```
+
+### Linting
+
+Run ESLint to check for code issues:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+biglabs-landingpage/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+├── public/               # Static assets
+└── ...
+```
+
+## Features
+
+- Responsive design for all screen sizes
+- Smooth animations with Framer Motion
+- Form validation with React Hook Form and Zod
+- Accessible UI components with Radix UI
+- Optimized fonts and images
+- TypeScript for type safety
+
+## Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/biglabs-landingpage)
+
+For other deployment options, check the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Hook Form](https://react-hook-form.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private project for BigLabs.
