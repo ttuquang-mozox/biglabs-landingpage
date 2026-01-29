@@ -81,8 +81,8 @@ const servicesData: ServiceCard[] = [
 
 export default function OurServicesPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 pt-20">
-      <section className="py-20 bg-white">
+    <>
+      <section>
         <div className="container mx-auto px-6">
           <HeroCarousel slides={slides} />
 
@@ -131,6 +131,6 @@ export default function OurServicesPage() {
           <SendEmailSection />
         </div>
       </section>
-    </div>
+    </>
   );
 }

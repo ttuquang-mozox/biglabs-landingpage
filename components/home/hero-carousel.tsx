@@ -29,7 +29,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white max-w-7xl mx-auto">
       <div className="relative w-full h-[450px] overflow-hidden bg-linear-to-br from-purple-900 via-purple-700 to-blue-600 rounded-t-2xl">
         {slides.map((slide, index) => (
           <div
@@ -88,7 +88,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
                 index === currentSlide
                   ? "bg-cyan-500 "
                   : "bg-gray-200 hover:bg-gray-300"

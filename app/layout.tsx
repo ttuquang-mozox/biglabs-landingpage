@@ -30,7 +30,9 @@ export default function RootLayout({
       >
         <div className="hidden lg:block">
           <Header />
-          {children}
+          <div className="min-h-screen bg-white pt-20">
+            <div className="container mx-auto px-6 py-4">{children}</div>
+          </div>
           <Footer />
         </div>
         {/* TODO: Responsive Overrides - Tablet: 640px to 1023px, Mobile: < 640px */}

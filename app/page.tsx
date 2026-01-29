@@ -30,14 +30,12 @@ const slides = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans pt-24 pb-12 px-4 md:px-8">
-      <div className="max-w-[1700px] mx-auto overflow-hidden">
-        <HeroCarousel slides={slides} />
-        <AboutSection />
-        <ServicesSection />
-        <InsightStoriesSection />
-        <SendEmailSection />
-      </div>
-    </div>
+    <>
+      <HeroCarousel slides={slides} />
+      <AboutSection />
+      <ServicesSection />
+      <InsightStoriesSection />
+      <SendEmailSection />
+    </>
   );
 }

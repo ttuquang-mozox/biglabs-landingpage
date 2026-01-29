@@ -99,60 +99,84 @@ export default function OurStoriesPage() {
   const [selectedStory, setSelectedStory] = useState<Story>(storiesData[0]);
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      <div className="container mx-auto px-6 py-20">
-        <HeroCarousel slides={slides} />
+    <>
+      <HeroCarousel slides={slides} />
 
-        <div className="w-4xl mt-16 mx-auto">
-          <SectionHeader title="OUR INSIGHT STORIES" />
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="space-y-4">
-              {storiesData.map((story, index) => (
-                <button
-                  key={story.id}
-                  onClick={() => setSelectedStory(story)}
-                  className={`w-full text-left transition-all duration-300 cursor-pointer ${
-                    selectedStory.id === story.id
-                      ? "opacity-100"
-                      : "opacity-60 hover:opacity-80"
-                  }`}
-                >
-                  <div className="relative">
-                    <div className="rounded-xl overflow-hidden">
-                      <div className="relative h-48 rounded-2xl overflow-hidden">
-                        <Image
-                          src={story.image}
-                          alt={story.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="py-2">
-                        <h3 className="text-base font-bold text-gray-900 leading-snug">
-                          Project #{index + 1} : {story.title}
-                        </h3>
-                      </div>
+      <div className="w-7xl mt-16 mx-auto">
+        <SectionHeader title="OUR INSIGHT STORIES" />
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="space-y-4">
+            {storiesData.map((story, index) => (
+              <button
+                key={story.id}
+                onClick={() => setSelectedStory(story)}
+                className={`w-full text-left transition-all duration-300 cursor-pointer ${
+                  selectedStory.id === story.id
+                    ? "opacity-100"
+                    : "opacity-60 hover:opacity-80"
+                }`}
+              >
+                <div className="relative">
+                  <div className="rounded-xl overflow-hidden">
+                    <div className="relative h-48 rounded-2xl overflow-hidden">
+                      <Image
+                        src={story.image}
+                        alt={story.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    {selectedStory.id === story.id && (
-                      <div className="absolute top-2 -right-6 ">
-                        <div className="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[16px] border-l-gray-900" />
-                      </div>
-                    )}
+                    <div className="py-2">
+                      <h3 className="text-base font-bold text-gray-900 leading-snug">
+                        Project #{index + 1} : {story.title}
+                      </h3>
+                    </div>
                   </div>
-                </button>
-              ))}
+                  {selectedStory.id === story.id && (
+                    <div className="absolute top-2 -right-6 ">
+                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[16px] border-l-gray-900" />
+                    </div>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                {selectedStory.title}
+              </h1>
+              <p className="text-md text-gray-700 leading-relaxed italic">
+                {selectedStory.subtitle}
+              </p>
             </div>
 
-            <div className="space-y-8">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  {selectedStory.title}
-                </h1>
-                <p className="text-md text-gray-700 leading-relaxed italic">
-                  {selectedStory.subtitle}
-                </p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
+                  <svg
+                    className="w-3 h-3 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={3}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-lg font-bold text-pink-500">Requirement</h2>
               </div>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {selectedStory.requirement}
+              </p>
+            </div>
 
+            {selectedStory.challenge && (
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
@@ -170,86 +194,56 @@ export default function OurStoriesPage() {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-lg font-bold text-pink-500">
-                    Requirement
-                  </h2>
+                  <h2 className="text-lg font-bold text-pink-500">Challenge</h2>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  {selectedStory.requirement}
+                  {selectedStory.challenge}
                 </p>
               </div>
+            )}
 
-              {selectedStory.challenge && (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
-                      <svg
-                        className="w-3 h-3 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={3}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-lg font-bold text-pink-500">
-                      Challenge
-                    </h2>
+            {selectedStory.diagram && (
+              <div className="py-4">
+                <Image
+                  src={selectedStory.diagram}
+                  alt="Solution Diagram"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
+            )}
+
+            {selectedStory.result && (
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
+                    <svg
+                      className="w-3 h-3 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
                   </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {selectedStory.challenge}
-                  </p>
+                  <h2 className="text-lg font-bold text-pink-500">Result</h2>
                 </div>
-              )}
-
-              {selectedStory.diagram && (
-                <div className="py-4">
-                  <Image
-                    src={selectedStory.diagram}
-                    alt="Solution Diagram"
-                    width={800}
-                    height={400}
-                    className="w-full h-auto"
-                  />
-                </div>
-              )}
-
-              {selectedStory.result && (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center">
-                      <svg
-                        className="w-3 h-3 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={3}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="text-lg font-bold text-pink-500">Result</h2>
-                  </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {selectedStory.result}
-                  </p>
-                </div>
-              )}
-            </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  {selectedStory.result}
+                </p>
+              </div>
+            )}
           </div>
         </div>
-
-        <SendEmailSection />
       </div>
-    </div>
+
+      <SendEmailSection />
+    </>
   );
 }
