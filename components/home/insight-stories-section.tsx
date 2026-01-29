@@ -69,7 +69,7 @@ export default function InsightStoriesSection({
         <div className={`${maxWidth} mx-auto mt-16`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-start">
             <div className="space-y-4 md:space-y-3">
-              <h3 className="text-5xl font-bold text-gray-900 leading-tight uppercase">
+              <h3 className="text-5xl font-bold text-gray-900 leading-tight uppercase line-clamp-4 h-[5em]">
                 {story.title}
               </h3>
               <p className="text-lg md:text-sm text-gray-600 leading-relaxed">

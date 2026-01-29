@@ -30,7 +30,7 @@ function DiamondCard({ title }: { title: string }) {
 
 export default function ServicesSection() {
   return (
-    <section className="py-10 bg-[#0a0c14] relative overflow-hidden rounded-2xl mx-4">
+    <section className="py-10 bg-[#0a0c14] relative overflow-hidden rounded-2xl max-w-7xl mx-auto">
       <div
         className="absolute inset-0 opacity-20 bg-[url('/services-bg.jpg')] bg-cover bg-center"
         style={{ filter: "blur(4px)" }}

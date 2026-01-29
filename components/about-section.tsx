@@ -56,64 +56,62 @@ const aboutCards: FeatureCard[] = [
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <SectionHeader title="ABOUT US" />
+    <section className="py-20 max-w-7xl mx-auto">
+      <SectionHeader title="ABOUT US" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
-          {aboutCards.map((card) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+        {aboutCards.map((card) => (
+          <div
+            key={card.id}
+            className="group relative transition-all duration-500 hover:-translate-y-2"
+          >
             <div
-              key={card.id}
-              className="group relative transition-all duration-500 hover:-translate-y-2"
+              className="relative h-[500px] overflow-hidden transition-all duration-500 rounded-t-2xl"
+              style={{
+                clipPath: "ellipse(140% 100% at 50% 0%)",
+                filter:
+                  "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+              }}
             >
               <div
-                className="relative h-[500px] overflow-hidden transition-all duration-500 rounded-t-2xl"
-                style={{
-                  clipPath: "ellipse(140% 100% at 50% 0%)",
-                  filter:
-                    "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
-                }}
-              >
-                <div
-                  className={`absolute inset-0 bg-linear-to-br ${card.background}`}
+                className={`absolute inset-0 bg-linear-to-br ${card.background}`}
+              />
+
+              <div className="absolute inset-0 opacity-40">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover"
                 />
+              </div>
 
-                <div className="absolute inset-0 opacity-40">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="absolute inset-0 bg-black/20" />
 
-                <div className="absolute inset-0 bg-black/20" />
+              <div className="relative h-full flex flex-col p-6 pb-20">
+                <h3 className="text-xl font-bold text-white text-center leading-tight mt-2 max-w-[240px] mx-auto">
+                  {card.title}
+                </h3>
 
-                <div className="relative h-full flex flex-col p-6 pb-20">
-                  <h3 className="text-xl font-bold text-white text-center leading-tight mt-2 max-w-[240px] mx-auto">
-                    {card.title}
-                  </h3>
-
-                  <div className="absolute bottom-8 left-0 right-0 bg-white rounded-2xl p-4 mx-2">
-                    <ul className="space-y-1">
-                      {card.items.map((item, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm text-gray-800"
-                        >
-                          <span className="text-gray-400 flex-shrink-0">•</span>
-                          <span className="leading-relaxed font-medium">
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="absolute bottom-8 left-0 right-0 bg-white rounded-2xl p-4 mx-2">
+                  <ul className="space-y-1">
+                    {card.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-sm text-gray-800"
+                      >
+                        <span className="text-gray-400 flex-shrink-0">•</span>
+                        <span className="leading-relaxed font-medium">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
