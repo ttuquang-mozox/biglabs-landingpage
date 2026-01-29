@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import HeroCarousel from "@/components/home/hero-carousel";
 import SectionHeader from "@/components/section-header";
 import SendEmailSection from "@/components/send-email-section";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+};
 
 const slides = [
   {

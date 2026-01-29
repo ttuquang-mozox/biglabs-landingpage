@@ -2,14 +2,19 @@ import AboutSection from "@/components/about-section";
 import BusinessModelSection from "@/components/business-model-section";
 import SendEmailSection from "@/components/send-email-section";
 import TeamMembersSection from "@/components/team-members-section";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 export default function AboutUsPage() {
   return (
     <>
       <section className="relative">
         <div
-          className="relative h-[550px] bg-linear-to-br from-gray-900 via-blue-900 to-gray-900 mx-6 rounded-t-2xl overflow-hidden"
+          className="relative h-[550px] bg-linear-to-br from-gray-900 via-blue-900 to-gray-900 max-w-7xl mx-auto rounded-t-2xl overflow-hidden"
           style={{ clipPath: "ellipse(110% 100% at 50% 0%)" }}
         >
           <div className="absolute inset-0">
@@ -24,7 +29,6 @@ export default function AboutUsPage() {
 
           <div className="relative h-full max-w-5xl mx-auto px-12 z-10">
             <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-4 h-full items-center">
-              {/* Left Column: Text Content */}
               <div className="flex flex-col justify-center text-center md:text-right">
                 <div className="space-y-1">
                   <h1 className="text-white text-xl md:text-2xl font-medium tracking-wide">
@@ -40,7 +44,6 @@ export default function AboutUsPage() {
                 </h2>
 
                 <div className="relative flex flex-col items-center md:items-end">
-                  {/* Decorative Line - Lean right */}
                   <div className="absolute top-1/2 left-1/2 md:left-full -translate-x-1/2 md:-translate-x-[90%] h-px bg-linear-to-r from-transparent via-cyan-400/30 to-transparent -translate-y-1/2 w-[140%] pointer-events-none" />
 
                   <div className="relative z-10 inline-block border-2 border-cyan-400/40 rounded-full px-6 py-2 bg-[#020617]/80 backdrop-blur-sm shadow-[0_0_20px_rgba(34,211,238,0.2)]">
@@ -51,7 +54,6 @@ export default function AboutUsPage() {
                 </div>
               </div>
 
-              {/* Right Column: CEO Image */}
               <div className="hidden md:flex items-end justify-start h-full relative">
                 <div className="absolute bottom-0 w-[450px] h-[550px] z-0 bg-radial-at-center from-blue-600/20 via-transparent to-transparent blur-3xl" />
                 <div className="relative w-[300px] h-[450px] z-10 transform translate-y-10 group transition-transform duration-700 hover:scale-105">

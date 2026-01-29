@@ -15,7 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BigLabs",
+  title: {
+    default: "BigLabs",
+    template: "BigLabs - %s",
+  },
+  icons: {
+    icon: "/images/logo-web.png",
+  },
 };
 
 export default function RootLayout({
