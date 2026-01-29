@@ -56,7 +56,7 @@ const aboutCards: FeatureCard[] = [
 
 export default function AboutSection() {
   return (
-    <section className="py-20 max-w-7xl mx-auto">
+    <section className="py-20 max-w-6xl mx-auto">
       <SectionHeader title="ABOUT US" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">

@@ -63,7 +63,7 @@ export default function SendEmailSection({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-3 m-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 focus:outline-none transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm whitespace-nowrap"
+                  className="px-6 py-3 m-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 focus:outline-none transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm whitespace-nowrap cursor-pointer"
                 >
                   {isSubmitting ? "Sending..." : "Send it to us"}
                 </button>

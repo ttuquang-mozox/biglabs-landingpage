@@ -91,7 +91,7 @@ export default function OurServicesPage() {
         <div className="container mx-auto px-6">
           <HeroCarousel slides={slides} />
 
-          <div className="w-4xl mt-16 mx-auto">
+          <div className="max-w-6xl mt-16 mx-auto">
             <SectionHeader title="OUR SERVICES" />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
               {servicesData.map((service) => (
@@ -124,7 +124,7 @@ export default function OurServicesPage() {
                       {service.description}
                     </p>
 
-                    <button className="text-cyan-500 hover:text-cyan-600 text-sm transition-colors duration-200 uppercase tracking-wide mt-auto pt-3 text-right font-bold">
+                    <button className="text-cyan-500 hover:text-cyan-600 text-sm transition-colors duration-200 uppercase tracking-wide mt-auto pt-3 text-right font-bold cursor-pointer">
                       Read More
                     </button>
                   </div>
